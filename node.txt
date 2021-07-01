@@ -1,0 +1,16 @@
+Create Bootnode
+1. bootnode -genkey bootnode.key
+2. Copy node key from bootnode.key
+3. get enode of bootnode by
+   bootnode -nodekeyhex baf32ab0b062b6bd7f53168d23e480b0dcf7d96b834579cf4e996440bfc1406c --writeaddress
+
+4. Bootnode enode
+36baf0df8ba2b508f3378ac9ea9c8db169d6a1c9b244eefb7e12487d6c30333929b5210ee17f13db6d5a4d3e5740589855ae388045ee20cd319e7d55e4abb0c5
+
+5. Run the bootnode by
+   bootnode -nodekey bootnode.key --verbosity 9 --addr 'ip:port'
+
+Node-1 Running
+geth --datadir node2/ --syncmode "full" --port 30313 --rpc --rpcaddr "172.16.12.127" --rpcport 8546 --rpccorsdomain "*" --rpcapi "personal,db,eth,net,web3,txpool,miner" --bootnodes "enode://16d01ad8e1c94f4c385d8c4693fe22d80bc84c4909184fd9bbc5ce227241856d04c83966a4652b5f0ef6e8e3687e4d6da9857f0912101c4d6a3fd7a4cc06d3b4@172.16.3.209:30303" --networkid 416 --identity Node-2 --nat "any" console
+
+
